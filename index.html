@@ -130,8 +130,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     console.log(snapshot.val());
         var data = snapshot.val();
-        $('#humidity').html(data.humid);
-        $('#temp').html(data.temp);
+        $('#humidity').html("<p>"+data.humid+"</p>");
+        $('#temp').html("<p>"+data.temp+"</p>");
         
     }, function (error) {
         console.log("Error: " + error.code);

@@ -90,7 +90,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa-users"></i></div>
         <div class="w3-right">
-          <h3>45</h3>
+          <h3>EXCELLENT</h3>
         </div>
         
         
@@ -103,10 +103,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
-
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
@@ -118,22 +116,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         storageBucket: "fir-475b7.appspot.com"
     };
     firebase.initializeApp(config);
-
     // Get a reference to the database service
     var database = firebase.database();
-
-
-
     var ref = firebase.database().ref().child();
-
-    ref.on("value", function(snapshot) {
-
-    console.log(snapshot.val());
+      ref.on("value", function(snapshot) {
+        console.log(snapshot.val());
         var data = snapshot.val();
         $('#humidity').html("<p>"+data.sensor.humid+"</p>");
         $('#temp').html("<p>"+data.sensor.temp+"</p>");
-        
-    }, function (error) {
+        }, function (error) {
         console.log("Error: " + error.code);
     });
     </script>
@@ -142,7 +133,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
-
   <div class="w3-panel">
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-third">
